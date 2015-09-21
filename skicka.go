@@ -728,9 +728,23 @@ func createConfigFile(filename string) {
 	; You may want to specify regular expressions to match local filenames
 	; that you want to be ignored by 'skicka upload'. Use one ignored-regexp
         ; line for each such regular expression.
+        ; Use "-quiet" if you filter a lot.
 	;ignored-regexp="\\.o$"
 	;ignored-regexp=~$
-	;
+	;ignored-regexp="\\._\\."
+	;ignored-regexp="RECYCLE\\.BIN"
+	;ignored-regexp="Thumbs\\.db$"
+	;ignored-regexp="\\.~lock\\..*$"
+	;ignored-regexp="~\\$"
+	;ignored-regexp="\\.DS_Store$"
+    	;ignored-regexp="desktop.ini"
+    	
+    	; Prevent sync of music, save bandwidth/space
+    	; ignored-regexp="\\.(mp3|wma|wav|aiff)$
+    	
+    	; Prevent sync of video (common formats)
+    	; ignored-regexp="\\.(avi|mp4|mkv|vob|flv|mov)$"
+    	
 	; To limit upload bandwidth, you can set the maximum (average)
 	; bytes per second that will be used for uploads
 	;bytes-per-second-limit=524288  ; 512kB
